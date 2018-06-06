@@ -27,7 +27,7 @@ namespace FirstCore
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Hello AspNet Core!");
             });
         }
     }
