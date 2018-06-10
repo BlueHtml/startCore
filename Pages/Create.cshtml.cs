@@ -6,11 +6,11 @@ using FirstCore.MyModel;
 
 namespace FirstCore.Pages
 {
-    public class Create : PageModel
+    public class CreateModel : PageModel
     {
         private readonly AppDbContext _db;
 
-        public Create(AppDbContext db)
+        public CreateModel(AppDbContext db)
         {
             _db = db;
         }

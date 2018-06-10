@@ -35,7 +35,12 @@ namespace FirstCore
             else
             {
                 app.UseExceptionHandler("/Error");
+                // app.UseHsts();
             }
+
+            // app.UseHttpsRedirection();
+            // app.UseStaticFiles();
+            // app.UseCookiePolicy();
 
             app.UseMvc();
 

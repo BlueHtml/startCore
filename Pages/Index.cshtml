@@ -1,11 +1,31 @@
-@page
-@using FirstCore.Pages
-@model Index
+@page 
+@using FirstCore.Pages 
+@model IndexModel 
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<h1>hello world</h1>
-<h3>hello razor</h3>
-<h4>the time is @DateTime.Now</h4>
+<h1>Contacts</h1>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>            
+            @foreach(var contact in Model.Customers)
+            {
+                <tr>
+                    <td>@contact.Id</td>
+                    <td>@contact.Name</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@contact.Id">edit</a>
+                        <button type="submit" asp-page-handler="delete" asp-route-id="@contact.Id">delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
-<p>
-    @Model.Message
-</p>
+    <a asp-page="./Create">Create</a>
+</form>
